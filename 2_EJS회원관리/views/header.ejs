@@ -1,0 +1,11 @@
+<% if(user == null){ %>
+    <a href="/login">로그인</a>
+<% }else{ %>
+    <strong><%=user%>님 환영합니다!</strong> <br>
+    <a href="/logout">로그아웃 <br> </a>
+
+    <!-- 전체 회원 조회 -->
+    <a href="/userlist"> 전체 회원 조회 </a>
+<% } %>
+<hr>
+<!-- horizontal rule(수평선) 을 의미하는 HTML 태그 -->

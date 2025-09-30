@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>게시글 제목: <%= post.title %></h1>
+    <p>작성자: <%= post.writer %> || 조회수: <%= post.hit %></p>
+    <p><%= post.content %></p>
+    <p>
+        <a href="/">메인페이지 이동</a>
+        <a href="/edit/<%= post.id %>">수정하기</a>
+    </p>
+    <form action="/delete/<%= post.id %>" method="post" onsubmit="return confirm('니마이로 삭제할 거요?')">
+        <button>삭제하기</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>우리 반 게시판입니다!</h1>
+    <table border="1">
+        <tr>
+            <th>번호</th>
+            <th>제목</th>
+            <th>작성자</th>
+            <th>조회수</th>
+        </tr>
+        <!-- 
+            미션2: 넘겨 받은 posts 키에서 값을 추출
+            - 문법: 반복문(for문) 
+            - 꺼낼 값: id, title, writer, hit
+            - 반복 생성: tr태그, td태그 4개 -> td 안의 내용을 posts에서 꺼내오기
+        -->
+        <% for (let i = 0; i < posts.length; i++) { %>
+            <tr>
+                <td><%= posts[i].id %></td>
+                <td><a href="/board/<%= posts[i].id %>"><%= posts[i].title %></a></td>
+                <td><%= posts[i].writer %></td>
+                <td><%= posts[i].hit %></td>
+            </tr>
+        <% } %>
+        <!-- <% posts.forEach(post => { %>
+            <tr>
+                <td><%= post.id %></td>
+                <td><%= post.title %></td>
+                <td><%= post.writer %></td>
+                <td><%= post.hit %></td>
+            </tr>
+        <% }) %> -->
+    </table>
+    <a href="/write">게시글 작성</a>
+</body>
+</html>

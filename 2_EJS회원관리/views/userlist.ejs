@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        1) header 임포트
+        2) 반복문을 통해서 전체 회원 출력
+    -->
+        <%- include("header") %>
+
+        <h1> 전체 회원 목록 </h1>
+        <table border="1">
+            <tr>
+                <th> 아이디 </th>
+                <th> 닉네임 </th>
+            </tr>
+            <!-- 
+                반복문을 활용하여, 넘겨 받은 데이터의 개수만큼, tr과 td를 생성
+                <tr>
+                    <td> 넘겨 받은 리스트의 인덱스의 id </td>
+                    <td> 넘겨 받은 리스트의 인덱스의 nick </td>
+                </tr>
+            -->
+        <% userlist.forEach(user => { %>
+            <tr>
+                <td><%= user.id %></td>
+                <td><%= user.nick %></td>
+            </tr>
+        <% }) %>
+        <!--
+        <% for (let i = 0; i < userlist.length; i++) { %>
+            <tr> -> 태그는 감싸줄 필요 X 
+                <td><%= userlist[i].id %></td> -> 값 꺼내올 때 
+                <td><%= userlist[i].nick %></td>
+            </tr>
+        <% } %>
+        -->
+        </table>
+</body>
+</html>

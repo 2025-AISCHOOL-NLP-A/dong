@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>전체 회원 목록입니다!</h1>
+    <ul>
+        <% for(let i = 0; i < data.length; i++){ %> <!-- 자바스크립트 문법이기 때문에 담아줌 -->
+            <li> <%= data[i].name %> : <%= data[i].age %> </li> <!-- li는 태그기 때문에 안 담음 -->
+        <% } %>
+
+        <% data.forEach((item)=>{ %>    <!-- 배열의 각 원소를 반복 처리 (위의 for문과 결과는 같지만, 코드가 더 간결) -->
+            <li> <%= item.name %> : <%= item.age %> </li>
+        <% }) %>
+    </ul>
+</body>
+</html>
